@@ -63,7 +63,15 @@ function synchronizeRepositoryLabels(repo, labels) {
     accessToken: ACCESS_TOKEN,
     dryRun: DRY_RUN,
     repo,
-    labels
+    labels: labels.map(label => {
+
+      const {
+        group,
+        ...rest
+      } = label;
+
+      return rest;
+    })
   });
 }
 
@@ -106,8 +114,8 @@ function generatePreview(defaultLabels, additionalLabels) {
   const previewTemplate = fs.readFileSync('./icons/_preview.html', 'utf8');
 
   const preview = previewTemplate
-    .replace('{{ DEFAULT_ICONS }}', labelsToHtml(defaultLabels).join(' '))
-    .replace('{{ ADDITIONAL_ICONS }}', labelsToHtml(additionalLabels).join(' '));
+    .replace('{{ DEFAULT_ICONS }}', labelsToHtml(defaultLabels))
+    .replace('{{ ADDITIONAL_ICONS }}', labelsToHtml(additionalLabels));
 
   console.log('generating label preview to ./icons/preview.html');
 
@@ -115,15 +123,26 @@ function generatePreview(defaultLabels, additionalLabels) {
 }
 
 function labelsToHtml(labels) {
-  return labels.map(
-    label => `
-      <span class="tag ${ isLight(label.color) ? 'inverted' : ''}"
-            title="${ label.description || label.name }"
-            style="background-color: #${ label.color }">
-        ${ label.name }
-      </span>
+
+  const grouped = Object.entries(labels.reduce((groups, label) => {
+    const group = groups[label.group || '_'] = groups[label.group || '_'] || [];
+
+    group.push(label);
+
+    return groups;
+  }, {}));
+
+  return grouped.map(
+    ([ groupName, labels ]) => `
+      <p>${ labels.map(label => `
+        <span class="tag ${ isLight(label.color) ? 'inverted' : ''}"
+              title="${ label.description || label.name }"
+              style="background-color: #${ label.color }">
+          ${ label.name }
+        </span>
+      `).join(' ') }</p>
     `
-  );
+  ).join(' ');
 }
 
 function isLight(color) {

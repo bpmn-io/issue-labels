@@ -2,45 +2,58 @@
 
 - name: Camunda Platform
   color: "006b75"
+  group: domain
 
 - name: Camunda Cloud
   color: "006b75"
+  group: domain
 
 - name: BPMN
   color: "006b75"
+  group: domain
 
 - name: DMN
   color: "006b75"
+  group: domain
 
 
 # theme
 
 - name: ux
   color: "0E8A16"
+  group: theme
 
 - name: a11y
   color: "0E8A16"
+  group: theme
 
 - name: refactoring actions
   color: "0E8A16"
+  group: theme
 
 - name: developer productivity
   color: "0E8A16"
+  group: theme
 
 - name: import
   color: "0E8A16"
+  group: theme
 
 
 # environment
 
 - name: browser:IE
   color: "eb6420"
+  group: environment
 
 - name: browser:Edge
   color: "eb6420"
+  group: environment
 
 - name: os:Windows
   color: "eb6420"
+  group: environment
 
 - name: os:Linux
   color: "eb6420"
+  group: environment
