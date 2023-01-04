@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Preview - labels</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        line-height: 1.4;
+      }
+
+      .tag {
+        display: inline-block;
+        height: auto;
+        margin: 0 6px 6px 0;
+        padding: 4px 12px;
+        font-size: .9em;
+        font-weight: 400;
+        white-space: nowrap;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      .tag.inverted {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Labels</h1>
+
+    <h3>Default</h3>
+
+    <p>{{ DEFAULT_ICONS }}</p>
+
+    <h3>Additional</h3>
+
+    <p>{{ ADDITIONAL_ICONS }}</p>
+  </body>
+</html>

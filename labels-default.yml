@@ -14,7 +14,11 @@
 
 - name: security
   description: Security related issue
-  color: "b60205"
+  color: "fc2929"
+
+- name: blocker
+  description: This issue blocks further progress.
+  color: "fc2929"
 
 - name: infrastructure
   aliases: 
@@ -56,12 +60,30 @@
 # generic markers
 
 - name: good first issue
+  aliases:
+    - easy-pick
+    - easy pick
+    - starter
   description: Good for newcomers
   color: "7057ff"
 
 - name: help wanted
   description: Extra attention is needed
-  color: "008672"
+  color: "7057ff"
+
+- name: pr welcome
+  aliases:
+    - pr-maybe
+    - pr-needed
+    - pr-welcome
+  description: We rely on a community contribution to improve this.
+  color: "7057ff"
+
+- name: needs discussion
+  aliases:
+    - needs-discussion
+  description: Needs further discussion
+  color: "cc317c"
 
 - name: question
   description: Further information is requested

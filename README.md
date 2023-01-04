@@ -5,7 +5,7 @@ Documentation and syncronization utilities for labels used across our projects.
 
 ## Synchronize Default Labels
 
-The following steps allow you to synchronize [default labels](./labels.yml) across bpmn.io projects.
+The following steps allow you to synchronize [default labels](./labels-default.yml) across bpmn.io projects.
 
 ```sh
 # fetch issue view via our task board
@@ -21,7 +21,7 @@ DRY_RUN=1 ACCESS_TOKEN=ghp_PERSONAL_ACCESS_TOKEN_WITH_REPO_SCOPE node index.js
 
 ## Custom Labels
 
-Beyond our [default labels](./labels.yml) we allow for custom labels to be added to repositories to reflect certain (domain specific) aspects. We use color codes to ensure those aspects are recognizable across repository boundaries.
+Beyond our [default labels](./labels-default.yml) we may add [custom labels](./labels-additional.yml) to repositories to reflect certain (domain specific) aspects. We use color codes to ensure those aspects are recognizable across repository boundaries.
 
 | What   | Example | Color   | Preview |
 | :----- | :------ | :------ | :------ |
