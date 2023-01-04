@@ -1,0 +1,88 @@
+# types
+
+- name: bug
+  description: Something isn't working
+  color: "d73a4a"
+
+- name: dependencies
+  description: Updates a dependency
+  color: "1D76DB"
+
+- name: enhancement
+  description: New feature or request
+  color: "FBCA04"
+
+- name: security
+  description: Security related issue
+  color: "b60205"
+
+- name: infrastructure
+  color: "c7def8"
+
+- name: release
+  color: "c7def8"
+
+- name: documentation
+  description: Improvements or additions to documentation
+  color: "BFD4F2"
+
+
+# states
+
+- name: backlog
+  description: Queued in backlog
+  color: "F9D0C4"
+
+- name: ready
+  description: Ready to be worked on
+  color: "F9D0C4"
+
+- name: in progress
+  description: Currently worked on
+  color: "F9D0C4"
+
+- name: needs review
+  description: Review pending
+  color: "F9D0C4"
+
+- name: fixed upstream
+  description: Requires integration of upstream change
+  color: "F9D0C4"
+
+# generic markers
+
+- name: good first issue
+  description: Good for newcomers
+  color: "7057ff"
+
+- name: help wanted
+  description: Extra attention is needed
+  color: "008672"
+
+- name: question
+  description: Further information is requested
+  color: "cc317c"
+
+- name: duplicate
+  description: This issue or pull request already exists
+  color: "ededed"
+
+- name: invalid
+  description: This doesn't seem right
+  color: "ededed"
+
+- name: wontfix
+  aliases:
+    - wont fix
+  description: This will not be worked on
+  color: "ededed"
+
+- name: spring cleaning
+  description: Could be cleaned up one day
+  color: "C2E0C6"
+
+- name: "channel:support"
+  color: "eda9f2"
+
+- name: "channel:customer"
+  color: "eda9f2"
