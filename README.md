@@ -1,24 +1,21 @@
-# label-sync
+# Labels
 
-Synchronizes [default labels](./labels.yml) across bpmn.io projects.
+Documentation and syncronization utilities for labels used across our projects.
 
 
-## Usage
+## Synchronize Default Labels
 
-Fetch issue view via our task board:
+The following steps allow you to synchronize [default labels](./labels.yml) across bpmn.io projects.
 
-```
-curl https://tasks.bpmn.io/wuffle/board/cards?s=-repo%3Aform > issues.json
-```
+```sh
+# fetch issue view via our task board
+curl https://tasks.bpmn.io/wuffle/board/cards > issues.json
 
-Execute the label sync utility:
-
-```
+# execute the label sync utility:
 ACCESS_TOKEN=ghp_PERSONAL_ACCESS_TOKEN_WITH_REPO_SCOPE node index.js
-```
 
-For debugging purposes you can run it in `DRY_RUN` mode, too:
-
-```
+# for debugging purposes run it in `DRY_RUN` mode
 DRY_RUN=1 ACCESS_TOKEN=ghp_PERSONAL_ACCESS_TOKEN_WITH_REPO_SCOPE node index.js
 ```
+
+
