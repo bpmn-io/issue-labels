@@ -3,35 +3,46 @@
 - name: bug
   description: Something isn't working
   color: "d73a4a"
+  group: types
 
 - name: dependencies
   description: Updates a dependency
   color: "1D76DB"
+  group: types
 
 - name: enhancement
   description: New feature or request
   color: "FBCA04"
+  group: types
 
 - name: security
   description: Security related issue
   color: "fc2929"
+  group: types
 
 - name: blocker
   description: This issue blocks further progress.
   color: "fc2929"
+  group: types
+
+
+# misc
 
 - name: infrastructure
   aliases: 
     - maintainance
     - ci
   color: "c7def8"
+  group: misc
 
 - name: release
   color: "c7def8"
+  group: misc
 
 - name: documentation
   description: Improvements or additions to documentation
-  color: "BFD4F2"
+  color: "c7def8"
+  group: misc
 
 
 # states
@@ -39,22 +50,27 @@
 - name: backlog
   description: Queued in backlog
   color: "F9D0C4"
+  group: states
 
 - name: ready
   description: Ready to be worked on
   color: "F9D0C4"
+  group: states
 
 - name: in progress
   description: Currently worked on
   color: "F9D0C4"
+  group: states
 
 - name: needs review
   description: Review pending
   color: "F9D0C4"
+  group: states
 
 - name: fixed upstream
   description: Requires integration of upstream change
   color: "F9D0C4"
+  group: states
 
 
 # generic markers
@@ -66,10 +82,12 @@
     - starter
   description: Good for newcomers
   color: "7057ff"
+  group: contribution
 
 - name: help wanted
   description: Extra attention is needed
   color: "7057ff"
+  group: contribution
 
 - name: pr welcome
   aliases:
@@ -78,37 +96,49 @@
     - pr-welcome
   description: We rely on a community contribution to improve this.
   color: "7057ff"
+  group: contribution
 
 - name: needs discussion
   aliases:
     - needs-discussion
   description: Needs further discussion
   color: "cc317c"
+  group: discovery
 
 - name: question
   description: Further information is requested
   color: "cc317c"
+  group: discovery
 
 - name: duplicate
   description: This issue or pull request already exists
   color: "ededed"
+  group: resolution
 
 - name: invalid
   description: This doesn't seem right
   color: "ededed"
+  group: resolution
 
 - name: wontfix
   aliases:
     - wont fix
   description: This will not be worked on
   color: "ededed"
+  group: resolution
 
 - name: spring cleaning
   description: Could be cleaned up one day
   color: "C2E0C6"
+  group: markers
+
+
+# support
 
 - name: "channel:support"
   color: "eda9f2"
+  group: support
 
 - name: "channel:customer"
   color: "eda9f2"
+  group: support
