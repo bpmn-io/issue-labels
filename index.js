@@ -15,8 +15,11 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const DRY_RUN = process.env.DRY_RUN;
 
 
-
-synchronizeLabels(repositories, labels).catch(error => {
+synchronizeLabels(repositories, defaultLabels).then(success => {
+  if (!success) {
+    process.exit(1);
+  }
+}).catch(error => {
   console.error(error);
 
   process.exit(1);
@@ -30,9 +33,16 @@ synchronizeLabels(repositories, labels).catch(error => {
  * @return Promise<any>
  */
 async function synchronizeLabels(repositories, labels) {
+  if (!ACCESS_TOKEN) {
+    console.warn('skipping label sync: no env.ACCESS_TOKEN provided');
+    return false;
+  }
+
   for (const repo of repositories) {
     await synchronizeRepositoryLabels(repo, labels);
   }
+
+  return true;
 }
 
 /**
@@ -42,10 +52,6 @@ async function synchronizeLabels(repositories, labels) {
  * @return Promise<any>
  */
 function synchronizeRepositoryLabels(repo, labels) {
-
-  if (!ACCESS_TOKEN) {
-    throw new Error('no env.ACCESS_TOKEN provided');
-  }
 
   console.log(`synchronizing ${ repo }`);
 
