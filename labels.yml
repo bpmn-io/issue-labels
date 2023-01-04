@@ -17,6 +17,9 @@
   color: "b60205"
 
 - name: infrastructure
+  aliases: 
+    - maintainance
+    - ci
   color: "c7def8"
 
 - name: release
@@ -48,6 +51,7 @@
 - name: fixed upstream
   description: Requires integration of upstream change
   color: "F9D0C4"
+
 
 # generic markers
 
