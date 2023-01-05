@@ -1,13 +1,22 @@
 # Labels
 
+This documents our usage of issue labels across bpmn.io and related projects.
+
 In our projects we build upon a set of [default labels](#default-labels) and define a framework for [custom, per-repository labels](#custom-labels). 
 
-:arrow_right: [**Preview labels**](https://cdn.statically.io/gh/bpmn-io/labels/main/icons/preview.html)
+:arrow_right: [**Preview our labels**](https://cdn.statically.io/gh/bpmn-io/labels/main/icons/preview.html)
+
+
+## General guidelines
+
+* Labels add important additional meta-data, we don't overuse them
+* We are label less per default (no _low priority_ or _task_ labels)
+* We use colors to group labels semantically
 
 
 ## Default labels
 
-[Out of the box available](./labels-default.yml) across all our repositories. 
+[`labels-default.yml`](./labels-default.yml) defines labels that are available out of the box, across all our repositories. 
 
 
 #### Automatic synchronization
@@ -26,9 +35,9 @@ DRY_RUN=1 ACCESS_TOKEN=ghp_PERSONAL_ACCESS_TOKEN_WITH_REPO_SCOPE node index.js
 
 ## Custom labels
 
-Beyond our [default labels](./labels-default.yml) we may add [custom labels](./labels-additional.yml) to repositories to reflect certain (domain specific) aspects. 
+[`labels-additional.yml`](./labels-additional.yml) showcases some custom labels. Those _may_ be added to individual repositories to reflect domain specific aspects. 
 
-We use color codes to ensure those aspects are recognizable across repository boundaries.
+We use color for semantic grouping of important aspects, within a repository, but also across repository boundaries.
 
 | What   | Example | Color   | Preview |
 | :----- | :------ | :------ | :------ |
