@@ -16,18 +16,6 @@ console.log(`found ${defaultLabels.length} labels`);
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const DRY_RUN = process.env.DRY_RUN;
 
-generatePreview(defaultLabels, additionalLabels);
-
-synchronizeLabels(repositories, defaultLabels).then(success => {
-  if (!success) {
-    process.exit(1);
-  }
-}).catch(error => {
-  console.error(error);
-
-  process.exit(1);
-});
-
 
 /**
  * @param {string[]} repositories
@@ -46,6 +34,41 @@ async function synchronizeLabels(repositories, labels) {
   }
 
   return true;
+}
+
+class ColorDefs {
+
+  constructor() {
+    this.c = {};
+  }
+
+  getColorName(label) {
+    let suffix = 0;
+
+    do {
+      const name = label.group + (suffix ? `-${suffix}` : '');
+
+      const color = this.c[name];
+
+      if (!color) {
+        this.c[name] = label.color;
+
+        return name;
+      }
+
+      if (color === label.color) {
+        return name;
+      }
+
+      suffix++;
+    } while (true);
+  }
+
+  getColors() {
+    return Object.entries(this.c).map(([ name, color ]) => {
+      return { name, color };
+    });
+  }
 }
 
 /**
@@ -113,16 +136,19 @@ function extractRepositories(issues) {
 function generatePreview(defaultLabels, additionalLabels) {
   const previewTemplate = fs.readFileSync('./icons/_preview.html', 'utf8');
 
+  const colorDefs = new ColorDefs();
+
   const preview = previewTemplate
-    .replace('{{ DEFAULT_ICONS }}', labelsToHtml(defaultLabels))
-    .replace('{{ ADDITIONAL_ICONS }}', labelsToHtml(additionalLabels));
+    .replace('{{ DEFAULT_ICONS }}', labelsToHtml(defaultLabels, colorDefs))
+    .replace('{{ ADDITIONAL_ICONS }}', labelsToHtml(additionalLabels, colorDefs))
+    .replace('{{ COLOR_DEFINITIONS }}', colorsToHtml(colorDefs));
 
   console.log('generating label preview to ./icons/preview.html');
 
   fs.writeFileSync('./icons/preview.html', preview, 'utf8');
 }
 
-function labelsToHtml(labels) {
+function labelsToHtml(labels, colorDefs) {
 
   const grouped = Object.entries(labels.reduce((groups, label) => {
     const group = groups[label.group || '_'] = groups[label.group || '_'] || [];
@@ -134,13 +160,17 @@ function labelsToHtml(labels) {
 
   return grouped.map(
     ([ groupName, labels ]) => `
-      <p>${ labels.map(label => `
-        <span class="tag ${ isLight(label.color) ? 'inverted' : ''}"
-              title="${ label.description || label.name }"
-              style="background-color: #${ label.color }">
-          ${ label.name }
-        </span>
-      `).join(' ') }</p>
+      <p>${ labels.map(label => {
+        const name = colorDefs.getColorName(label);
+
+        return `
+          <span class="tag"
+                title="${ label.description || label.name }"
+                style="background-color: var(--color-${name}-bg); color: var(--color-${name}-fg)">
+            ${ label.name }
+          </span>
+        `;
+      }).join(' ') }</p>
     `
   ).join(' ');
 }
@@ -158,3 +188,32 @@ function isLight(color) {
   );
   return hsp > 145;
 }
+
+function colorsToHtml(colorDefs) {
+
+  const colors = colorDefs.getColors();
+
+  return `
+    <style>
+      :root {
+        ${ colors.map(color => `
+          --color-${ color.name }-bg: #${ color.color };
+          --color-${ color.name }-fg: var(${ isLight(color.color) ? '--color-light-fg' : '--color-dark-fg' });
+        `).join('') }
+      }
+    </style>
+  `;
+}
+
+
+generatePreview(defaultLabels, additionalLabels);
+
+synchronizeLabels(repositories, defaultLabels).then(success => {
+  if (!success) {
+    process.exit(1);
+  }
+}).catch(error => {
+  console.error(error);
+
+  process.exit(1);
+});

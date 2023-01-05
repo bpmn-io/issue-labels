@@ -3,6 +3,12 @@
     <title>Preview - labels</title>
 
     <style>
+
+      :root {
+        --color-light-fg: #333;
+        --color-dark-fg: white;
+      }
+
       * {
         box-sizing: border-box;
         font-family: sans-serif;
@@ -22,14 +28,12 @@
         text-decoration: none;
       }
 
-      .tag.inverted {
-        color: #333;
-      }
-
       p {
         margin-top: .5em;
       }
     </style>
+
+    {{ COLOR_DEFINITIONS }}
   </head>
   <body>
     <h1>Labels</h1>
