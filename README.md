@@ -1,10 +1,10 @@
-# Labels
+> Preview our labels [on this page](https://cdn.statically.io/gh/bpmn-io/labels/main/icons/preview.html).
+
+# Issue Labels
 
 This documents our usage of issue labels across bpmn.io and related projects.
 
 In our projects we build upon a set of [default labels](#default-labels) and define a framework for [custom, per-repository labels](#custom-labels). 
-
-:arrow_right: [**Preview our labels**](https://cdn.statically.io/gh/bpmn-io/labels/main/icons/preview.html)
 
 
 ## General guidelines
