@@ -42,5 +42,5 @@ We use color for semantic grouping of important aspects, within a repository, bu
 | What   | Example | Color   | Preview |
 | :----- | :------ | :------ | :------ |
 | Theme / feature cluster  | `ux`, `a11y`, `modeling`, `refactoring actions` | `#0E8A16` | ![a11y](https://img.shields.io/badge/a11y-0E8A16?style=flat) |
-| Domain | `{ BPMN, DMN, FORM }`, `{ Camunda Platform, Camunda Cloud }` | `#006b75` | ![Camunda Platform](https://img.shields.io/badge/Camunda%20Platform-006b75?style=flat)|
-| Environment | `browsers = { IE, Edge, Safari }`, `os = { Windows, MacOS, Darwin }` | `#eb6420` | ![browser:IE](https://img.shields.io/badge/browser:IE-eb6420?style=flat)|
+| Domain | `{ BPMN, DMN, FORM }`, `{ Camunda Platform, Camunda Cloud }` | `#4369a0` | ![Camunda Platform](https://img.shields.io/badge/Camunda%20Platform-4369a0?style=flat)|
+| Environment | `browsers = { IE, Edge, Safari }`, `os = { Windows, MacOS, Darwin }` | `#e2a465` | ![browser:IE](https://img.shields.io/badge/browser:IE-e2a465?style=flat)|

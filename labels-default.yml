@@ -2,7 +2,7 @@
 
 - name: bug
   description: Something isn't working
-  color: "d73a4a"
+  color: "d32f2f"
   group: types
 
 - name: dependencies
@@ -49,27 +49,27 @@
 
 - name: backlog
   description: Queued in backlog
-  color: "F9D0C4"
+  color: "ffccbc"
   group: states
 
 - name: ready
   description: Ready to be worked on
-  color: "F9D0C4"
+  color: "ffccbc"
   group: states
 
 - name: in progress
   description: Currently worked on
-  color: "F9D0C4"
+  color: "ffccbc"
   group: states
 
 - name: needs review
   description: Review pending
-  color: "F9D0C4"
+  color: "ffccbc"
   group: states
 
 - name: fixed upstream
   description: Requires integration of upstream change
-  color: "F9D0C4"
+  color: "ffccbc"
   group: states
 
 
@@ -81,12 +81,12 @@
     - easy pick
     - starter
   description: Good for newcomers
-  color: "7057ff"
+  color: "9157ff"
   group: contribution
 
 - name: help wanted
   description: Extra attention is needed
-  color: "7057ff"
+  color: "9157ff"
   group: contribution
 
 - name: pr welcome
@@ -95,7 +95,7 @@
     - pr-needed
     - pr-welcome
   description: We rely on a community contribution to improve this.
-  color: "7057ff"
+  color: "9157ff"
   group: contribution
 
 - name: needs discussion
@@ -129,16 +129,16 @@
 
 - name: spring cleaning
   description: Could be cleaned up one day
-  color: "C2E0C6"
+  color: "caed2a"
   group: markers
 
 
 # support
 
 - name: "channel:support"
-  color: "eda9f2"
+  color: "f56fe5"
   group: support
 
 - name: "channel:customer"
-  color: "eda9f2"
+  color: "f56fe5"
   group: support
