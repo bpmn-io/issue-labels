@@ -3,6 +3,12 @@
     <title>Preview - labels</title>
 
     <style>
+
+      :root {
+        --color-light-fg: #333;
+        --color-dark-fg: white;
+      }
+
       * {
         box-sizing: border-box;
         font-family: sans-serif;
@@ -22,14 +28,60 @@
         text-decoration: none;
       }
 
-      .tag.inverted {
-        color: #333;
-      }
-
       p {
         margin-top: .5em;
       }
     </style>
+
+    
+    <style>
+      :root {
+        
+          --color-types-bg: #d32f2f;
+          --color-types-fg: var(--color-dark-fg);
+        
+          --color-types-1-bg: #1D76DB;
+          --color-types-1-fg: var(--color-dark-fg);
+        
+          --color-types-2-bg: #FBCA04;
+          --color-types-2-fg: var(--color-light-fg);
+        
+          --color-types-3-bg: #fc2929;
+          --color-types-3-fg: var(--color-dark-fg);
+        
+          --color-misc-bg: #c7def8;
+          --color-misc-fg: var(--color-light-fg);
+        
+          --color-states-bg: #ffccbc;
+          --color-states-fg: var(--color-light-fg);
+        
+          --color-contribution-bg: #9157ff;
+          --color-contribution-fg: var(--color-dark-fg);
+        
+          --color-discovery-bg: #cc317c;
+          --color-discovery-fg: var(--color-dark-fg);
+        
+          --color-resolution-bg: #ededed;
+          --color-resolution-fg: var(--color-light-fg);
+        
+          --color-markers-bg: #caed2a;
+          --color-markers-fg: var(--color-light-fg);
+        
+          --color-support-bg: #f56fe5;
+          --color-support-fg: var(--color-light-fg);
+        
+          --color-domain-bg: #4369a0;
+          --color-domain-fg: var(--color-dark-fg);
+        
+          --color-theme-bg: #0E8A16;
+          --color-theme-fg: var(--color-dark-fg);
+        
+          --color-environment-bg: #e2a465;
+          --color-environment-fg: var(--color-light-fg);
+        
+      }
+    </style>
+  
   </head>
   <body>
     <h1>Labels</h1>
@@ -38,252 +90,252 @@
 
     
       <p>
-        <span class="tag "
-              title="Something isn't working"
-              style="background-color: #d73a4a">
-          bug
-        </span>
-       
-        <span class="tag "
-              title="Updates a dependency"
-              style="background-color: #1D76DB">
-          dependencies
-        </span>
-       
-        <span class="tag inverted"
-              title="New feature or request"
-              style="background-color: #FBCA04">
-          enhancement
-        </span>
-       
-        <span class="tag "
-              title="Security related issue"
-              style="background-color: #fc2929">
-          security
-        </span>
-       
-        <span class="tag "
-              title="This issue blocks further progress."
-              style="background-color: #fc2929">
-          blocker
-        </span>
-      </p>
+          <span class="tag"
+                title="Something isn't working"
+                style="background-color: var(--color-types-bg); color: var(--color-types-fg)">
+            bug
+          </span>
+         
+          <span class="tag"
+                title="Updates a dependency"
+                style="background-color: var(--color-types-1-bg); color: var(--color-types-1-fg)">
+            dependencies
+          </span>
+         
+          <span class="tag"
+                title="New feature or request"
+                style="background-color: var(--color-types-2-bg); color: var(--color-types-2-fg)">
+            enhancement
+          </span>
+         
+          <span class="tag"
+                title="Security related issue"
+                style="background-color: var(--color-types-3-bg); color: var(--color-types-3-fg)">
+            security
+          </span>
+         
+          <span class="tag"
+                title="This issue blocks further progress."
+                style="background-color: var(--color-types-3-bg); color: var(--color-types-3-fg)">
+            blocker
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="infrastructure"
-              style="background-color: #c7def8">
-          infrastructure
-        </span>
-       
-        <span class="tag inverted"
-              title="release"
-              style="background-color: #c7def8">
-          release
-        </span>
-       
-        <span class="tag inverted"
-              title="Improvements or additions to documentation"
-              style="background-color: #c7def8">
-          documentation
-        </span>
-      </p>
+          <span class="tag"
+                title="infrastructure"
+                style="background-color: var(--color-misc-bg); color: var(--color-misc-fg)">
+            infrastructure
+          </span>
+         
+          <span class="tag"
+                title="release"
+                style="background-color: var(--color-misc-bg); color: var(--color-misc-fg)">
+            release
+          </span>
+         
+          <span class="tag"
+                title="Improvements or additions to documentation"
+                style="background-color: var(--color-misc-bg); color: var(--color-misc-fg)">
+            documentation
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="Queued in backlog"
-              style="background-color: #F9D0C4">
-          backlog
-        </span>
-       
-        <span class="tag inverted"
-              title="Ready to be worked on"
-              style="background-color: #F9D0C4">
-          ready
-        </span>
-       
-        <span class="tag inverted"
-              title="Currently worked on"
-              style="background-color: #F9D0C4">
-          in progress
-        </span>
-       
-        <span class="tag inverted"
-              title="Review pending"
-              style="background-color: #F9D0C4">
-          needs review
-        </span>
-       
-        <span class="tag inverted"
-              title="Requires integration of upstream change"
-              style="background-color: #F9D0C4">
-          fixed upstream
-        </span>
-      </p>
+          <span class="tag"
+                title="Queued in backlog"
+                style="background-color: var(--color-states-bg); color: var(--color-states-fg)">
+            backlog
+          </span>
+         
+          <span class="tag"
+                title="Ready to be worked on"
+                style="background-color: var(--color-states-bg); color: var(--color-states-fg)">
+            ready
+          </span>
+         
+          <span class="tag"
+                title="Currently worked on"
+                style="background-color: var(--color-states-bg); color: var(--color-states-fg)">
+            in progress
+          </span>
+         
+          <span class="tag"
+                title="Review pending"
+                style="background-color: var(--color-states-bg); color: var(--color-states-fg)">
+            needs review
+          </span>
+         
+          <span class="tag"
+                title="Requires integration of upstream change"
+                style="background-color: var(--color-states-bg); color: var(--color-states-fg)">
+            fixed upstream
+          </span>
+        </p>
      
       <p>
-        <span class="tag "
-              title="Good for newcomers"
-              style="background-color: #7057ff">
-          good first issue
-        </span>
-       
-        <span class="tag "
-              title="Extra attention is needed"
-              style="background-color: #7057ff">
-          help wanted
-        </span>
-       
-        <span class="tag "
-              title="We rely on a community contribution to improve this."
-              style="background-color: #7057ff">
-          pr welcome
-        </span>
-      </p>
+          <span class="tag"
+                title="Good for newcomers"
+                style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
+            good first issue
+          </span>
+         
+          <span class="tag"
+                title="Extra attention is needed"
+                style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
+            help wanted
+          </span>
+         
+          <span class="tag"
+                title="We rely on a community contribution to improve this."
+                style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
+            pr welcome
+          </span>
+        </p>
      
       <p>
-        <span class="tag "
-              title="Needs further discussion"
-              style="background-color: #cc317c">
-          needs discussion
-        </span>
-       
-        <span class="tag "
-              title="Further information is requested"
-              style="background-color: #cc317c">
-          question
-        </span>
-      </p>
+          <span class="tag"
+                title="Needs further discussion"
+                style="background-color: var(--color-discovery-bg); color: var(--color-discovery-fg)">
+            needs discussion
+          </span>
+         
+          <span class="tag"
+                title="Further information is requested"
+                style="background-color: var(--color-discovery-bg); color: var(--color-discovery-fg)">
+            question
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="This issue or pull request already exists"
-              style="background-color: #ededed">
-          duplicate
-        </span>
-       
-        <span class="tag inverted"
-              title="This doesn't seem right"
-              style="background-color: #ededed">
-          invalid
-        </span>
-       
-        <span class="tag inverted"
-              title="This will not be worked on"
-              style="background-color: #ededed">
-          wontfix
-        </span>
-      </p>
+          <span class="tag"
+                title="This issue or pull request already exists"
+                style="background-color: var(--color-resolution-bg); color: var(--color-resolution-fg)">
+            duplicate
+          </span>
+         
+          <span class="tag"
+                title="This doesn't seem right"
+                style="background-color: var(--color-resolution-bg); color: var(--color-resolution-fg)">
+            invalid
+          </span>
+         
+          <span class="tag"
+                title="This will not be worked on"
+                style="background-color: var(--color-resolution-bg); color: var(--color-resolution-fg)">
+            wontfix
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="Could be cleaned up one day"
-              style="background-color: #C2E0C6">
-          spring cleaning
-        </span>
-      </p>
+          <span class="tag"
+                title="Could be cleaned up one day"
+                style="background-color: var(--color-markers-bg); color: var(--color-markers-fg)">
+            spring cleaning
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="channel:support"
-              style="background-color: #eda9f2">
-          channel:support
-        </span>
-       
-        <span class="tag inverted"
-              title="channel:customer"
-              style="background-color: #eda9f2">
-          channel:customer
-        </span>
-      </p>
+          <span class="tag"
+                title="channel:support"
+                style="background-color: var(--color-support-bg); color: var(--color-support-fg)">
+            channel:support
+          </span>
+         
+          <span class="tag"
+                title="channel:customer"
+                style="background-color: var(--color-support-bg); color: var(--color-support-fg)">
+            channel:customer
+          </span>
+        </p>
     
 
     <h2>Additional</h3>
 
     
       <p>
-        <span class="tag "
-              title="Camunda Platform"
-              style="background-color: #006b75">
-          Camunda Platform
-        </span>
-       
-        <span class="tag "
-              title="Camunda Cloud"
-              style="background-color: #006b75">
-          Camunda Cloud
-        </span>
-       
-        <span class="tag "
-              title="BPMN"
-              style="background-color: #006b75">
-          BPMN
-        </span>
-       
-        <span class="tag "
-              title="DMN"
-              style="background-color: #006b75">
-          DMN
-        </span>
-      </p>
+          <span class="tag"
+                title="Camunda Platform"
+                style="background-color: var(--color-domain-bg); color: var(--color-domain-fg)">
+            Camunda Platform
+          </span>
+         
+          <span class="tag"
+                title="Camunda Cloud"
+                style="background-color: var(--color-domain-bg); color: var(--color-domain-fg)">
+            Camunda Cloud
+          </span>
+         
+          <span class="tag"
+                title="BPMN"
+                style="background-color: var(--color-domain-bg); color: var(--color-domain-fg)">
+            BPMN
+          </span>
+         
+          <span class="tag"
+                title="DMN"
+                style="background-color: var(--color-domain-bg); color: var(--color-domain-fg)">
+            DMN
+          </span>
+        </p>
      
       <p>
-        <span class="tag "
-              title="ux"
-              style="background-color: #0E8A16">
-          ux
-        </span>
-       
-        <span class="tag "
-              title="a11y"
-              style="background-color: #0E8A16">
-          a11y
-        </span>
-       
-        <span class="tag "
-              title="refactoring actions"
-              style="background-color: #0E8A16">
-          refactoring actions
-        </span>
-       
-        <span class="tag "
-              title="developer productivity"
-              style="background-color: #0E8A16">
-          developer productivity
-        </span>
-       
-        <span class="tag "
-              title="import"
-              style="background-color: #0E8A16">
-          import
-        </span>
-      </p>
+          <span class="tag"
+                title="ux"
+                style="background-color: var(--color-theme-bg); color: var(--color-theme-fg)">
+            ux
+          </span>
+         
+          <span class="tag"
+                title="a11y"
+                style="background-color: var(--color-theme-bg); color: var(--color-theme-fg)">
+            a11y
+          </span>
+         
+          <span class="tag"
+                title="refactoring actions"
+                style="background-color: var(--color-theme-bg); color: var(--color-theme-fg)">
+            refactoring actions
+          </span>
+         
+          <span class="tag"
+                title="developer productivity"
+                style="background-color: var(--color-theme-bg); color: var(--color-theme-fg)">
+            developer productivity
+          </span>
+         
+          <span class="tag"
+                title="import"
+                style="background-color: var(--color-theme-bg); color: var(--color-theme-fg)">
+            import
+          </span>
+        </p>
      
       <p>
-        <span class="tag inverted"
-              title="browser:IE"
-              style="background-color: #eb6420">
-          browser:IE
-        </span>
-       
-        <span class="tag inverted"
-              title="browser:Edge"
-              style="background-color: #eb6420">
-          browser:Edge
-        </span>
-       
-        <span class="tag inverted"
-              title="os:Windows"
-              style="background-color: #eb6420">
-          os:Windows
-        </span>
-       
-        <span class="tag inverted"
-              title="os:Linux"
-              style="background-color: #eb6420">
-          os:Linux
-        </span>
-      </p>
+          <span class="tag"
+                title="browser:IE"
+                style="background-color: var(--color-environment-bg); color: var(--color-environment-fg)">
+            browser:IE
+          </span>
+         
+          <span class="tag"
+                title="browser:Edge"
+                style="background-color: var(--color-environment-bg); color: var(--color-environment-fg)">
+            browser:Edge
+          </span>
+         
+          <span class="tag"
+                title="os:Windows"
+                style="background-color: var(--color-environment-bg); color: var(--color-environment-fg)">
+            os:Windows
+          </span>
+         
+          <span class="tag"
+                title="os:Linux"
+                style="background-color: var(--color-environment-bg); color: var(--color-environment-fg)">
+            os:Linux
+          </span>
+        </p>
     
   </body>
 </html>
