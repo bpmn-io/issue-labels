@@ -89,6 +89,11 @@
   color: "9157ff"
   group: contribution
 
+- name: needs more information
+  description: Requires additional information to be actionable.
+  color: "9157ff"
+  group: contribution
+
 - name: pr welcome
   aliases:
     - pr-maybe
