@@ -32,6 +32,8 @@
   group: theme
 
 - name: developer productivity
+  aliases:
+    - developer-productivity
   color: "0E8A16"
   group: theme
 
