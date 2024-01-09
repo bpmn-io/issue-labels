@@ -120,9 +120,7 @@ function parseLabels(path) {
 
 function extractRepositories(issues) {
   return Object.keys(
-    Object.values(issues.items).flat().filter(
-      (issue) => issue.state === 'open'
-    ).reduce(
+    Object.values(issues.items).flat().reduce(
       (repositories, issue) => {
         repositories[`${ issue.repository.owner.login }/${ issue.repository.name }`] = 1;
 
