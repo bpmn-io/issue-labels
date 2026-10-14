@@ -40,7 +40,11 @@ async function synchronizeLabels(repositories, labels) {
       continue;
     }
 
-    await synchronizeRepositoryLabels(repo, labels);
+    try {
+      await synchronizeRepositoryLabels(repo, labels);
+    } catch (err) {
+      console.error(`failed to synchronize label for ${repo}`, err);
+    }
   }
 
   return true;
