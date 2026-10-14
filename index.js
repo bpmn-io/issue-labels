@@ -13,6 +13,10 @@ const repositories = extractRepositories(issues);
 console.log(`found ${repositories.length} active repositories`);
 console.log(`found ${defaultLabels.length} labels`);
 
+const IGNORED_REPOSITORIES = new Set([
+  'camunda/camunda-hub'
+]);
+
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const DRY_RUN = process.env.DRY_RUN;
 
@@ -30,6 +34,12 @@ async function synchronizeLabels(repositories, labels) {
   }
 
   for (const repo of repositories) {
+
+    if (IGNORED_REPOSITORIES.has(repo)){
+      console.warn(`skipping label sync for ${repo}: repository ignored`);
+      continue;
+    }
+
     await synchronizeRepositoryLabels(repo, labels);
   }
 
