@@ -115,6 +115,31 @@
   color: "cc317c"
   group: discovery
 
+- name: needs:changes
+  description: Requires follow-ups on review hints
+  color: "ededed"
+  group: checks
+
+- name: needs:pr-quality
+  description: Requires changes to pull request
+  color: "ededed"
+  group: checks
+
+- name: needs:cla
+  description: Requires CLA to be signed
+  color: "ededed"
+  group: checks
+
+- name: needs:ci-approval
+  description: Requires approval of workflow runs
+  color: "ededed"
+  group: checks
+
+- name: stale
+  description: This pull request will be automatically closed unless there is activity.
+  color: "ededed"
+  group: resolution
+
 - name: duplicate
   description: This issue or pull request already exists
   color: "ededed"
