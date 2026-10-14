@@ -61,6 +61,9 @@
           --color-discovery-bg: #cc317c;
           --color-discovery-fg: var(--color-dark-fg);
         
+          --color-checks-bg: #ededed;
+          --color-checks-fg: var(--color-light-fg);
+        
           --color-resolution-bg: #ededed;
           --color-resolution-fg: var(--color-light-fg);
         
@@ -181,18 +184,6 @@
           </span>
          
           <span class="tag"
-                title="Extra attention is needed"
-                style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
-            help wanted
-          </span>
-         
-          <span class="tag"
-                title="Requires additional information to be actionable."
-                style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
-            needs more information
-          </span>
-         
-          <span class="tag"
                 title="We rely on a community contribution to improve this."
                 style="background-color: var(--color-contribution-bg); color: var(--color-contribution-fg)">
             pr welcome
@@ -200,6 +191,18 @@
         </p>
      
       <p>
+          <span class="tag"
+                title="Extra attention is needed"
+                style="background-color: var(--color-discovery-bg); color: var(--color-discovery-fg)">
+            help wanted
+          </span>
+         
+          <span class="tag"
+                title="Requires additional information to be actionable."
+                style="background-color: var(--color-discovery-bg); color: var(--color-discovery-fg)">
+            needs more information
+          </span>
+         
           <span class="tag"
                 title="Needs further discussion"
                 style="background-color: var(--color-discovery-bg); color: var(--color-discovery-fg)">
@@ -214,6 +217,38 @@
         </p>
      
       <p>
+          <span class="tag"
+                title="Requires follow-ups on review hints"
+                style="background-color: var(--color-checks-bg); color: var(--color-checks-fg)">
+            needs:changes
+          </span>
+         
+          <span class="tag"
+                title="Requires changes to pull request"
+                style="background-color: var(--color-checks-bg); color: var(--color-checks-fg)">
+            needs:pr-quality
+          </span>
+         
+          <span class="tag"
+                title="Requires CLA to be signed"
+                style="background-color: var(--color-checks-bg); color: var(--color-checks-fg)">
+            needs:cla
+          </span>
+         
+          <span class="tag"
+                title="Requires approval of workflow runs"
+                style="background-color: var(--color-checks-bg); color: var(--color-checks-fg)">
+            needs:ci-approval
+          </span>
+        </p>
+     
+      <p>
+          <span class="tag"
+                title="This pull request will be automatically closed unless there is activity."
+                style="background-color: var(--color-resolution-bg); color: var(--color-resolution-fg)">
+            stale
+          </span>
+         
           <span class="tag"
                 title="This issue or pull request already exists"
                 style="background-color: var(--color-resolution-bg); color: var(--color-resolution-fg)">
