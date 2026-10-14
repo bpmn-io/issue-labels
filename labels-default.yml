@@ -84,16 +84,6 @@
   color: "9157ff"
   group: contribution
 
-- name: help wanted
-  description: Extra attention is needed
-  color: "9157ff"
-  group: contribution
-
-- name: needs more information
-  description: Requires additional information to be actionable.
-  color: "9157ff"
-  group: contribution
-
 - name: pr welcome
   aliases:
     - pr-maybe
@@ -102,6 +92,16 @@
   description: We rely on a community contribution to improve this.
   color: "9157ff"
   group: contribution
+
+- name: help wanted
+  description: Extra attention is needed
+  color: "cc317c"
+  group: discovery
+
+- name: needs more information
+  description: Requires additional information to be actionable.
+  color: "cc317c"
+  group: discovery
 
 - name: needs discussion
   aliases:
